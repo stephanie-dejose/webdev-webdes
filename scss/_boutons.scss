@@ -1,0 +1,47 @@
+// ./scss/_boutons.scss
+// MODULES DES BOUTONS
+
+.btn-arrow {
+  display: block;
+  width: 246px;
+  height: 47px;
+  background: url('../media/btn-fleche.png');
+  color: $couleurClaire;
+  font-family: $policeSecondaire;
+  text-align: center;
+  line-height: 43px;
+    // définir la hauteur que va prendre la ligne de texte
+  &:hover {
+    color: $couleurClaire;
+    background: url('../media/btn-fleche-2.png');
+  }
+}
+
+
+/*======================
+  BOUTON - HAUT DE PAGE
+======================*/
+
+#boutonHaut {
+  display: block;
+  position: fixed;
+  font-size: 30px;
+  font-weight: bold;
+  bottom: 25px;
+  right: 30px;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background-color: $couleurPrimaire;
+  color: $couleurClaire;
+  cursor: pointer;
+  padding: 15px 20px 0;
+  transition: all 0.3s;
+  &:hover {
+    color: $couleurPrimaire;
+    background-color: $couleurClaire;
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+    font-size: 40px;
+  }
+}

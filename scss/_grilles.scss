@@ -1,0 +1,37 @@
+// ./scss/_grilles.scss
+// MODULES DES GRILLES
+
+* {
+  box-sizing: border-box;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat($grilleNombreColonnes, 1fr); /* 12 colonnes qui prennent chacune une unité*/
+  //grid-gap: $grilleGoutiereHorizontale $grilleGoutiereVerticale; /* D'abord 'row' puis 'columns'*/
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* MOBILE FIRST :
+   Tous les enfants directs de .grille prennent
+   par défaut les 12 colonnes
+*/
+.grille > * {
+grid-column: span $grilleNombreColonnes;
+}
+
+@each $etiquette, $dimension in $grilleBreakPoints {
+  @media screen and (min-width:#{$dimension}) {
+    @for $i from 1 through $grilleNombreColonnes {
+      .col-#{$etiquette}#{$i} {
+        grid-column: span #{$i};
+      }
+    }
+    @for $i from 1 through $grilleNombreColonnes {
+      .row-#{$etiquette}#{$i} {
+        grid-row: span #{$i} ;
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+// ./scss/_formes.scss
+// MODULES DES FORMES
+
+/*====================
+  FORME - TRIANGLE
+====================*/
+
+.triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-left: 50px solid transparent;
+  margin: 0 auto;
+}
+
+.triangle-light {
+  @extend .triangle;
+  // permet d'étendre une propriété qui a déjà été déclarée (include + add combinés)
+  border-top: 50px solid $couleurClaire;
+}
+
+.triangle-primary {
+  @extend .triangle;
+  border-top: 50px solid $couleurPrimaire;
+}
+
+.flecheDetailFormation {
+  z-index: 1;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: $couleurSecondaire transparent transparent transparent;
+  border-style: solid;
+  border-width: 32px 42.5px 0 42.5px;
+  bottom: -32px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+/*====================
+  FORME - RECTANGLE
+====================*/
+
+.rectangle {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}
+
+.rectangle-light {
+  @extend .rectangle;
+  background: $colorFacebook;
+
+}
+
+.rectangle-dark {
+  @extend .rectangle;
+  background: $colorTwitter;
+}
+
+/*==================
+  FORME - LOSANGE
+==================*/
+
+#losange {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: calc(50% - (500px / 2));
+  #triangle-1 {
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-bottom: 180px solid $couleurSecondaire;
+}
+  #triangle-2 {
+      width: 0;
+      height: 0;
+      border-left: 250px solid transparent;
+      border-right: 250px solid transparent;
+      border-top: 180px solid $couleurSecondaire;
+  }
+}

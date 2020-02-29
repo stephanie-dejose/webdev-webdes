@@ -1,0 +1,41 @@
+// ./scss/_variables.scss
+// MODULE DES VARIABLES
+
+// --------- Couleurs ---------
+$couleurPrimaire: #FF1456;         // rose
+$couleurPrimaireClaire: lighten($couleurPrimaire, 30%);
+$couleurPrimaireFoncee: darken($couleurPrimaire, 30%);
+$couleurSecondaire: #393939;      // gris fonce
+$couleurTertiaire: #eeeedd;       // gris très clair
+$couleurFoncee: #000;             // gris fonce
+$couleurClaire: #fff;             // blanc
+$colorFacebook:  #3b5998;         // facebook
+$colorTwitter: #00aced;           // twitter
+
+// --------- Polices ---------
+
+$policePrimaire:   'Aller';
+$policeSecondaire: 'Futura';
+
+// --------- Tailles Police ---------
+
+$policeS:  15px;
+$policeM:  18px;
+$policeL:  20px;
+$policeXL: 30px;
+
+// --------- Grilles ---------
+
+$grilleNombreColonnes:       12;
+$grilleGoutiereHorizontale: 1rem;
+$grilleGoutiereVerticale:   1rem;
+/* On met rem (par rappport à l'élément racine, il prend donc l'élément par défaut) à la place de em
+(qui prend la "valeur" dans lequel il se trouve => h1,...) */
+
+$grilleBreakPoints: ('xs': '0','s' :'544px', 'm' :'768px','l' :'1024px','xl':'1200px');
+
+// --------- Boîtes ---------
+
+$boiteDimensionFixe: 900px;
+$boiteBordsDimension: 2px;
+$boitePadding: 2rem;

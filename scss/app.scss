@@ -1,0 +1,501 @@
+// ./scss/app.scss
+
+@import "polices";
+@import "variables";
+@import "grilles";
+@import "boutons";
+@import "visibilites";
+@import "utilitaires";
+@import "reset";
+@import "formes";
+
+/*=====================================
+  GENERAL ET DIVERS
+=====================================*/
+body {
+  margin: 0;
+  background-color: $couleurTertiaire;
+  color: $couleurSecondaire;
+  font-family: $policePrimaire;
+  p > br {
+    line-height: 2;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul {
+    list-style: none;
+  }
+  section > h2 {
+    font-size: $policeXL;
+    text-align: center;
+    @media screen and (min-width: map-get($grilleBreakPoints,'m')){
+      font-size: 40px;
+    }
+  }
+}
+
+#hero, #sectionPrincipale, .conditionsAcces, .sectionMap, .articleFormation, .sectionFooter {
+  @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+    width: 100%;
+    max-width: $boiteDimensionFixe;
+    margin: auto;
+  }
+}
+
+/*=====================================
+  HEADER
+=====================================*/
+#hero {
+  position: relative;
+  padding-bottom: 30px;
+  #logo {
+    display: flex;
+    justify-content: center;
+    figure {
+      margin: 1rem 0;
+      #logo-ieps {
+        padding-top: 10px;
+        margin-right: 1.9rem;
+      }
+    }
+  }
+  .menuPrincipal {
+    justify-content: center;
+    ul {
+      padding: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        &:not(:last-of-type) {
+          padding-right: 10px;
+        }
+        a {
+        font-size: $policeS;
+        padding: 10px;
+        color: $couleurSecondaire;
+          &.active, &:hover {
+            font-weight: bold;
+            color: $couleurPrimaire;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+    .menuPrincipal {
+      padding-top: 60px;
+      margin-left: 100px;
+      .pipeTexte {
+        li {
+          &:not(:last-of-type) {
+            padding-right: 0;
+          }
+          &:after {
+            content: "|";
+            margin: 0;
+          }
+          &:last-child:after {
+            content: '';
+            margin: 0;
+          }
+        }
+      }
+    }
+    #logo {
+      #logo-ieps {
+        margin-right: .5rem;
+        margin-left: 4.5rem;
+      }
+    }
+  }
+}
+
+/*=====================================
+  MAIN
+=====================================*/
+.backgroundTeam {
+  color: $couleurTertiaire;
+  text-align: center;
+  background: url("../media/team.jpg") center top no-repeat;
+  background-attachment: fixed;
+}
+
+/*=====================================
+  SECTION -> INFORMATION
+=====================================*/
+.enteteFormation {
+  position: relative;
+  padding: 40px 0;
+  h2, h3, p {
+    position: relative;
+    z-index: 1;
+  }
+  h2 {
+    color: $couleurPrimaire;
+    font-size: 50px;
+    font-family: $policeSecondaire;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-size: 40px;
+    margin: 35px 0;
+  }
+  p {
+    z-index: 2;
+    margin-bottom: 1rem;
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+    h2 {
+      font-size: 60px;
+    }
+  }
+}
+
+/*=====================================
+  SECTION -> INFOS PRATIQUES
+=====================================*/
+.infosPratiques {
+  padding-top: 50px;
+  > h2 {
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+  }
+  p {
+    font-size: $policeS;
+    br {
+      line-height: 0;
+    }
+  }
+  .ligneBlanche {
+    width: 20rem;
+    margin: 6px auto 45px;
+    border-bottom: 1px solid $couleurTertiaire;
+  }
+  article {
+    width: 400px;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto 40px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    > .boxRose {
+      padding: 40px 0;
+      background-color: $couleurPrimaire;
+      h2 {
+        margin: 30px 0 20px;
+        font-size: $policeL;
+      }
+      br {
+        line-height: 0;
+      }
+      .iconesOrganisation {
+        margin: 0 auto;
+        width: 140px;
+        height: 140px;
+        background: url("../media/spriteIcones.png") no-repeat;
+      }
+      .iconeCalendrier {
+        background-position: -3.5px;
+      }
+      .iconeHorloge {
+        background-position: -145px;
+      }
+      .iconeDiplome {
+        background-position: -284.5px;
+      }
+    }
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+    .ligneBlanche {
+      margin-top: 10px;
+      width: 14.5rem;
+    }
+    article {
+      margin-top: 50px;
+      margin-bottom: 0;
+      > .boxRose {
+        width: 96%;
+        height: 300px;
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+/*=====================================
+  SECTION -> FORMATION EN DETAILS
+=====================================*/
+.detailsFormation {
+  position: relative;
+  background-color: $couleurSecondaire;
+  color: $couleurClaire;
+  text-align: justify;
+  padding: 0 25px 20px;
+  height: auto;
+  z-index: 0;
+  > h2 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding-top: 25px;
+  }
+  article {
+    margin-bottom: 30px;
+    h2, h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  .conditionsAcces {
+    background-color: $couleurPrimaire;
+    margin: -10px 0 0;
+    padding: 5px 25px 20px;
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+    text-align: left;
+    > h2 {
+      text-transform: none;
+      padding-top: 35px;
+    }
+    h3 {
+      font-size: $policeM;
+    }
+    article {
+      padding-left: 20px;
+      p {
+        font-size: $policeS;
+      }
+    }
+    .conditionsAcces {
+      margin: 10px 20px;
+      padding: 5px 10px;
+      h2 {
+        margin: 0;
+        font-size: $policeM;
+      }
+      p {
+        margin-top: 5px;
+        font-size: $policeS;
+      }
+    }
+    .ligneRoseGauche, .ligneRoseDroite {
+      position: absolute;
+      margin: 18px 0 0 10px;
+      border-left: 1px solid $couleurPrimaire;
+    }
+    .ligneRoseGauche {
+      height: 87%;
+    }
+    .ligneRoseDroite {
+      height: 72%;
+    }
+  }
+}
+
+/*=====================================
+  SECTION -> MAP
+=====================================*/
+.sectionMap {
+  font-size: 0;
+  iframe {
+    width: 100%;
+    height: 500px;
+    font-size: 0;
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.1);
+  }
+}
+
+/*=====================================
+  SECTION -> FORMATION EN BREF
+=====================================*/
+.formationBref {
+  background-color: $couleurSecondaire;
+  color: $couleurClaire;
+  padding: 30px 20px;
+  margin: 0;
+  > p {
+    margin: 20px 0;
+    text-align: center;
+    br {
+      line-height: 0;
+    }
+  }
+  article {
+    margin-bottom: 50px;
+    h2 {
+      margin-bottom: 15px;
+    }
+  }
+  address {
+    padding-bottom: 20px;
+    > strong {
+      font-size: $policeM;
+    }
+    p br {
+      line-height: 0.5;
+    }
+    a:hover {
+      color: $couleurPrimaire;
+    }
+  }
+  #liensDocumentation ul {
+    padding-left: 0;
+    li {
+      margin-bottom: 10px;
+      &:hover {
+        color: $couleurPrimaire;
+      }
+    }
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+    text-align: left;
+    .ligneBlanche {
+      width: 20rem;
+      margin: 6px auto 45px;
+      border-bottom: 1px solid $couleurTertiaire;
+    }
+    article {
+      margin: 0;
+      &:not(:last-child) {
+        padding-right: 20px;
+      }
+      h2 {
+        font-size: $policeM;
+      }
+      p {
+        margin-bottom: 15px;
+        font-size: $policeS;
+        text-align: left;
+        letter-spacing: 1px;
+        font-weight: normal;
+      }
+      address {
+        padding-bottom: 10px;
+        > strong {
+          font-size: $policeS;
+        }
+        p br {
+          line-height: 0.5;
+        }
+      }
+    }
+    #liensDocumentation ul {
+      li {
+        margin-bottom: 15px;
+        a {
+          font-size: $policeS;
+          font-weight: lighter;
+          border-bottom: 1px solid;
+        }
+      }
+    }
+  }
+}
+
+/*=====================================
+  FOOTER
+=====================================*/
+footer {
+  background: $couleurTertiaire;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  > h2 {
+    font-size: $policeS;
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0 10px;
+    @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+        text-align: left;
+        margin-bottom: 0;
+        margin-left: 20px;
+    }
+  }
+  .reseauxSociaux {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+      justify-self: start;
+      margin-left: 20px;
+    }
+    a {
+      display: inline;
+      width: 37px;
+      height: 37px;
+      float: left;
+      margin-top: 20px;
+      margin-right: 30px;
+      background: url("../media/spriteReseauxSociaux.png") no-repeat;
+      &:hover {
+        opacity: .7;
+      }
+    }
+    .logoFacebook {
+      background-position: 0;
+    }
+    .logoTwitter {
+      background-position: -37px;
+    }
+    .logoGooglePlus {
+      background-position: -74px;
+    }
+    .logoYoutube {
+      background-position: -111px;
+      margin-right: 0;
+    }
+  }
+  .menuFooter {
+    justify-content: center;
+    ul {
+      padding: 50px 0 30px;
+      text-align: center;
+      li {
+        display: inline-block;
+        &:not(:last-of-type) {
+          padding-right: 10px;
+        }
+        a {
+        font-size: $policeS;
+        padding: 10px;
+        color: $couleurSecondaire;
+          &.active, &:hover {
+            font-weight: bold;
+            color: $couleurPrimaire;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+    @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+      padding-top: 0;
+      margin-top: -75px;
+      justify-self: end;
+      .pipeTexte {
+        li {
+          &:not(:last-of-type) {
+            padding-right: 0;
+          }
+          &:after {
+            content: "|";
+            margin: 0;
+          }
+          &:last-child:after {
+            content: '';
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    text-align: right;
+    padding-bottom: 10px;
+    font-size: 11px;
+    margin-right: 25px;
+  }
+}

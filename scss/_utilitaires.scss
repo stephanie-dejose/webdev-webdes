@@ -1,0 +1,48 @@
+// ./scss/_utilitaires.scss
+// MODULE DES UTILITAIRES
+
+/*==========================
+    DISPLAY NONE
+==========================*/
+
+@media screen and (min-width: 0) {
+  .d-sm-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .d-md-none {
+    display: unset;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+/*==========================
+    IMAGES RESPONSIVES
+==========================*/
+
+.img-resp {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*==========================
+    BOITES
+==========================*/
+
+  .boite_dimension__fixe {
+    width: 100%;
+    max-width: $boiteDimensionFixe;
+    margin: auto;
+  }
+
+  .boite_bords {
+    border:  $boiteBordsDimension solid;
+    padding: $boitePadding;
+  }

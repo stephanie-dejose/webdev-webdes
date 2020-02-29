@@ -1,0 +1,19 @@
+// ./scss/_polices.scss
+// MODULES DES POLICES
+
+@font-face  {
+  font-family: 'Aller';
+  src: url("../polices/allerLightRegular.woff2") format("woff2"),
+       url("../polices/allerLightRegular.woff") format("woff");
+  font-weight: normal;
+// Pour qu'il n'y ai pas de variante de la police (changement du gras,...)
+  font-style: normal;
+}
+
+@font-face  {
+  font-family: 'Futura';
+  src: url("../polices/futuraKoyu.woff2") format("woff2"),
+       url("../polices/futuraKoyu.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
